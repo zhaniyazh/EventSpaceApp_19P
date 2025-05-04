@@ -231,7 +231,7 @@ $conn->close();
       <label for="startTime">Start Time:</label>
       <select id="startTime">
         <option value="">Select start</option>
-        <?php for ($h = 8; $h <= 17; $h++): ?>
+        <?php for ($h = 8; $h <= 22; $h++): ?>
           <option value="<?php echo sprintf("%02d:00", $h); ?>"><?php echo sprintf("%02d:00", $h); ?></option>
         <?php endfor; ?>
       </select>
@@ -241,7 +241,7 @@ $conn->close();
       <label for="endTime">End Time:</label>
       <select id="endTime">
         <option value="">Select end</option>
-        <?php for ($h = 9; $h <= 18; $h++): ?>
+        <?php for ($h = 9; $h <= 23; $h++): ?>
           <option value="<?php echo sprintf("%02d:00", $h); ?>"><?php echo sprintf("%02d:00", $h); ?></option>
         <?php endfor; ?>
       </select>
@@ -292,7 +292,7 @@ function renderCalendar() {
   const date = new Date(currentYear, currentMonth, 1);
   const firstDay = date.getDay();
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-  calendarHeader.textContent = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  calendarHeader.textContent = date.toLocaleDateString('en-DE', { month: 'long', year: 'numeric' });
 
   calendarGrid.innerHTML = '';
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
