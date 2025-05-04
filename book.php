@@ -22,14 +22,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
     $email = $conn->real_escape_string($_POST['email']);
     $date = $conn->real_escape_string($_POST['date']);
     $room = $conn->real_escape_string($_POST['room']);
-    $start_time = $conn->real_escape_string($_POST['start_time']);
-    $end_time = $conn->real_escape_string($_POST['end_time']);
-    
+    $start_time = date("H:i", strtotime(trim($_POST['start_time'])));
+    $end_time = date("H:i", strtotime(trim($_POST['end_time'])));    
+
     // conflict check
-    $conflict_sql = "SELECT * FROM bookings WHERE date='$date' AND room='$room' 
-                     AND (
-                        (start_time < '$end_time' AND end_time > '$start_time')
-                     )";
+    $conflict_sql = "
+    SELECT 1 FROM bookings 
+    WHERE date = '$date' 
+    AND room = '$room' 
+    AND NOT (
+        end_time <= '$start_time' OR 
+        start_time >= '$end_time'
+    )";
     $conflict_result = $conn->query($conflict_sql);
 
     if ($conflict_result->num_rows > 0) {
