@@ -21,10 +21,10 @@ Manual room reservation processes often lead to scheduling conflicts, time wasta
 ## **Installation Instructions**
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/eventspace.git
+git clone https://github.com/zhaniyazh/EventSpaceApp_19P.git
 
 # 2. Navigate into the project directory
-cd eventspace
+cd EventSpaceApp_19P
 
 # 3. Set up your local server (XAMPP/WAMP/MAMP)
 
@@ -42,6 +42,8 @@ http://localhost/eventspace/index.php
 ```
 
 ## **Usage Guide**  
+- Sign in to the system  
+- Log in using your credentials
 - From the main interface, select a room and a date  
 - Choose your preferred start and end time  
 - Enter your name and email  
@@ -62,10 +64,9 @@ This project does not include an automated test suite. However, the following ma
 
 
 ## **Known Issues / Limitations**  
-- No mobile-optimized UI yet  
-- Time slots are fixed between 08:00 and 18:00  
-- No user authentication for public users  
+- Users can book, but they cannot manage their bookings after submission — only admin can  
 - Admin authentication is basic (no hashed passwords)
+- No mobile-optimized UI yet 
 
 ## **References**  
 - [PHPMailer Documentation](https://github.com/PHPMailer/PHPMailer)  
