@@ -79,10 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="email" name="email" placeholder="Enter your email" required>
         <input type="password" name="password" placeholder="Password" required>
 
-        <div class="forgot-password">
-          <a href="#">Forgot password?</a>
-        </div>
-
         <button type="submit" class="btn-gradient">Login</button>
       </form>
     </div>

@@ -29,12 +29,12 @@ function registerUser($email, $username, $password, $confirm_password) {
     }
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->store_result();  // ✅ This is required for `num_rows` to work correctly!
+    $stmt->store_result();  // required for `num_rows` to work correctly
 
     if ($stmt->num_rows > 0) {
         $stmt->close();
-        echo "DEBUG: Email exists!<br>";  // Test if this is executed
-        showError('This email is already registered. Please login or reset your password.');
+        echo "DEBUG: Email exists!<br>";  // test if this is executed
+        showError('This email is already registered. Please login through your email.');
     }
     $stmt->close();
 

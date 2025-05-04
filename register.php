@@ -35,8 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p class="login-text">
       Already have an account?<br>
       <a href="login.php">Login here!</a><br>
-      or<br>
-      <a href="forgot_password.php">Forgot Password?</a>
     </p>
     <div class="rooms">
       <img src="assets/icons/home1.webp" alt="Room 1" class="room-image">
