@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'zhaniyazhaksylyk@gmail.com'; // your Gmail
+                $mail->Username = 'zhaniyazhaksylyk@gmail.com';
                 $mail->Password = 'tjbsuvqsznvsueph';   // app-specific password
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
