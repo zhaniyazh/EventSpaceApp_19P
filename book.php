@@ -231,7 +231,7 @@ $conn->close();
       <label for="startTime">Start Time:</label>
       <select id="startTime">
         <option value="">Select start</option>
-        <?php for ($h = 8; $h <= 21; $h++): ?>
+        <?php for ($h = 8; $h <= 22; $h++): ?>
           <option value="<?php echo sprintf("%02d:00", $h); ?>"><?php echo sprintf("%02d:00", $h); ?></option>
         <?php endfor; ?>
       </select>
@@ -241,7 +241,7 @@ $conn->close();
       <label for="endTime">End Time:</label>
       <select id="endTime">
         <option value="">Select end</option>
-        <?php for ($h = 9; $h <= 22; $h++): ?>
+        <?php for ($h = 9; $h <= 23; $h++): ?>
           <option value="<?php echo sprintf("%02d:00", $h); ?>"><?php echo sprintf("%02d:00", $h); ?></option>
         <?php endfor; ?>
       </select>
