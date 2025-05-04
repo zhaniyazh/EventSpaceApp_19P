@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
         
-                $mail->setFrom"eventspace@gmail.com', 'EventSpace');
+                $mail->setFrom('eventspace@gmail.com', 'EventSpace');
                 $mail->addAddress($email, $name); // to user
                 $mail->Subject = 'Your EventSpace Booking is Confirmed';
                 $mail->Body = "Hello $name,\n\nYour booking is confirmed:\nRoom: $room\nDate: $date\nTime: $start_time to $end_time.\n\nThank you for using EventSpace!";
