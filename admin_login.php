@@ -185,7 +185,7 @@ body {
         showCancelButton: false,
         preConfirm: (input) => {
           return new Promise((resolve, reject) => {
-            if (input === "<?php echo $_SESSION['generated_code']; ?>") {
+            if (input === "<?php echo $_SESSION['code']; ?>") {
               resolve();
             } else {
               reject('Incorrect code');
