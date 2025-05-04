@@ -19,9 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Generate 6-digit verification code
         $code = rand(100000, 999999);
         $_SESSION['code'] = $code;
-        $_SESSION['temp_user'] = [
-            'email' => $email
-        ];
+        $_SESSION['temp_user'] = [ 'email' => $email ];
+        $_SESSION['show_verification'] = true;  
 
         // Send email with code
         $mail = new PHPMailer(true);
@@ -174,5 +173,33 @@ body {
       <button type="submit">Login</button>
     </form>
   </div>
+
+  <?php if (isset($_SESSION['show_verification']) && $_SESSION['show_verification']): ?>
+    <script>
+      Swal.fire({
+        title: 'Verification Sent!',
+        text: 'A code was sent to your email.',
+        input: 'text',
+        inputPlaceholder: 'Enter code',
+        confirmButtonText: 'Verify',
+        showCancelButton: false,
+        preConfirm: (input) => {
+          return new Promise((resolve, reject) => {
+            if (input === "<?php echo $_SESSION['generated_code']; ?>") {
+              resolve();
+            } else {
+              reject('Incorrect code');
+            }
+          });
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = 'admin.php';
+        }
+      });
+    </script>
+    <?php unset($_SESSION['show_verification'], $_SESSION['generated_code']); ?>
+  <?php endif; ?>
+
 </body>
 </html>
