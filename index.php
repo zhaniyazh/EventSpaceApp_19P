@@ -59,7 +59,7 @@
       <li class="mb-3"><img src="assets/icons/message.jpg" width="30"> contact@eventspace.com</li>
       <li class="mb-3"><img src="assets/icons/icons.jpg" width="30"> (555) 555-1234</li>
       <li class="mb-3"><img src="assets/icons/location.jpg" width="30"> Torstraße 135, 10119 Berlin</li>
-      <li class="mb-3"><img src="assets/icons/calendar.jpg" width="30"> Booking available 24/7</li>
+      <li class="mb-3"><img src="assets/icons/calendar.jpg" width="30"> Booking available 08:00 - 23:00</li>
     </ul>
   </div>
 </footer>

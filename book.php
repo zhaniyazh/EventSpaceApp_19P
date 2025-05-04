@@ -192,7 +192,7 @@ $conn->close();
       <li><img src="assets/icons/message.jpg" width="20"> contact@eventspace.com</li>
       <li><img src="assets/icons/icons.jpg" width="20"> (555) 555-1234</li>
       <li><img src="assets/icons/location.jpg" width="20"> Torstraße 135, 10119 Berlin</li>
-      <li><img src="assets/icons/calendar.jpg" width="20"> Booking available 24/7</li>
+      <li><img src="assets/icons/calendar.jpg" width="20"> Booking available 08:00 - 23:00</li>
     </ul>
   </div>
 </footer>
