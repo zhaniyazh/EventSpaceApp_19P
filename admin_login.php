@@ -39,33 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Body = "Your login verification code is: $code";
 
             $mail->send();
-            
-            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-            <script>
-            Swal.fire({
-                title: 'Verification Sent!',
-                text: 'A code was sent to your email.',
-                input: 'text',
-                inputPlaceholder: 'Enter code',
-                confirmButtonText: 'Verify',
-                showCancelButton: false,
-                preConfirm: (input) => {
-                    return new Promise((resolve, reject) => {
-                        if (input === '$code') {
-                            resolve();
-                        } else {
-                            reject('Incorrect code');
-                        }
-                    });
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = 'admin.php';
-                }
-            });
-            </script>";
-            
-            exit;
         } catch (Exception $e) {
             $error_message = 'Email failed: ' . $mail->ErrorInfo;
         }
@@ -175,31 +148,32 @@ body {
   </div>
 
   <?php if (isset($_SESSION['show_verification']) && $_SESSION['show_verification']): ?>
-    <script>
-      Swal.fire({
-        title: 'Verification Sent!',
-        text: 'A code was sent to your email.',
-        input: 'text',
-        inputPlaceholder: 'Enter code',
-        confirmButtonText: 'Verify',
-        showCancelButton: false,
-        preConfirm: (input) => {
-          return new Promise((resolve, reject) => {
-            if (input === "<?php echo $_SESSION['code']; ?>") {
-              resolve();
-            } else {
-              reject('Incorrect code');
-            }
-          });
-        }
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = 'admin.php';
-        }
-      });
-    </script>
-    <?php unset($_SESSION['show_verification'], $_SESSION['generated_code']); ?>
-  <?php endif; ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    Swal.fire({
+      title: 'Verification Sent!',
+      text: 'A code was sent to your email.',
+      input: 'text',
+      inputPlaceholder: 'Enter code',
+      confirmButtonText: 'Verify',
+      showCancelButton: false,
+      preConfirm: (input) => {
+        return new Promise((resolve, reject) => {
+          if (input === "<?php echo $_SESSION['code']; ?>") {
+            resolve();
+          } else {
+            reject('Incorrect code');
+          }
+        });
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'admin.php';
+      }
+    });
+  </script>
+  <?php unset($_SESSION['show_verification'], $_SESSION['code']); ?>
+<?php endif; ?>
 
 </body>
 </html>
