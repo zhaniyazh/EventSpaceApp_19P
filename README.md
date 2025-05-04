@@ -4,7 +4,7 @@
 This project is a web-based booking system designed for educational institutions and co-working spaces. It allows users to visually select a room, choose a time slot, and confirm a reservation—all while preventing double bookings. Users also receive an email confirmation for successful bookings.
 
 ## **Problem Statement**  
-Manual room reservation processes often lead to scheduling conflicts, time wastage, and poor resource management. Without a centralized digital system, users may double-book spaces or lack clarity on availability. EventSpace solves this issue with a modern, easy-to-use interface that automates availability checks, confirms reservations, and eliminates errors.
+Manual room reservation processes often lead to scheduling conflicts, time wastage, and poor resource management. Without a centralized digital system, users may lack clarity on availability. EventSpace solves this issue with a modern, easy-to-use interface that automates confirms reservations and eliminates errors.
 
 ## **Objectives**  
 - To create an intuitive, conflict-free room reservation interface  
@@ -33,7 +33,7 @@ cd eventspace
 #    - Create a new database named `eventspace_db`
 #    - Import the provided SQL file `eventspace_db.sql`
 
-# 5. Configure PHPMailer (optional but recommended)
+# 5. Configure PHPMailer (recommended)
 #    - Open `book.php`
 #    - Set your Gmail and App Password in the PHPMailer section
 
@@ -51,11 +51,15 @@ http://localhost/eventspace/index.php
 > Admin login: `admin_login.php`  
 > Admin can view/manage all bookings in `admin.php`
 
-## **Testing**  
-No automated test suite is included, but:
-- Try booking a room for overlapping times to test conflict detection  
-- Try using invalid or missing fields in the form  
-- You may add PHPUnit for backend testing in future iterations
+## **Testing**
+This project does not include an automated test suite. However, the following manual tests are recommended:
+- **Booking Conflict Test:**  
+  Attempt to book a room at the same date and time as an existing confirmed booking. The system should detect the overlap.
+- **Form Validation Test:**  
+  Submit the sign up form with missing or invalid inputs/passwords (empty fields, less than 8 characters, password mismatch). The system should display appropriate error messages.
+- **Admin Panel Access Test:**  
+  Request a verification code and attempt to log in to the admin panel. Only valid codes should allow access.
+
 
 ## **Known Issues / Limitations**  
 - No mobile-optimized UI yet  
@@ -69,4 +73,4 @@ No automated test suite is included, but:
 - [Font: Poppins - Google Fonts](https://fonts.google.com/specimen/Poppins)  
 
 ## **Team Members**  
-- Zhaniya Zhaksylyk, 123456, 19-P  
+- Zhaniya Zhaksylyk, 220103082, 19-P  
