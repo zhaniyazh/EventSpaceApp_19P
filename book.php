@@ -108,7 +108,7 @@ $conn->close();
   <a href="index.php" class="logout-btn">Logout</a>
   <div class="gallery">
   <div class="gallery-item">
-    <img src="assets/images/room1.png" alt="The Atelier">
+    <img src="assets/images/room1.png" alt="The Studio">
     <div class="caption">
       <h4>The Studio</h4>
       <p>Perfect for meeting events and creative brainstormings.</p>
@@ -175,7 +175,7 @@ $conn->close();
     <label for="roomSelect">Select Room:</label>
     <select id="roomSelect">
       <option value="">Choose a room</option>
-      <option value="The Atelier">The Atelier</option>
+      <option value="The Studio">The Studio</option>
       <option value="Oak Room">Oak Room</option>
       <option value="Botanica Lounge">Botanica Lounge</option>
       <option value="Spiral Studio">Spiral Studio</option>
