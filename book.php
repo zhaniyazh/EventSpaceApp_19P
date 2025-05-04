@@ -1,4 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'src/Exception.php';
+require 'src/PHPMailer.php';
+require 'src/SMTP.php';
+
 // connect to DB
 $servername = "localhost";
 $username = "root"; 
@@ -33,6 +39,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
                 VALUES ('$name', '$email', '$date', '$room', '$start_time', '$end_time', 'confirmed')";
         if ($conn->query($sql) === TRUE) {
             $success = "Booking confirmed!";
+
+            $mail = new PHPMailer(true);
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'zhaniyazhaksylyk@gmail.com'; // your Gmail
+                $mail->Password = 'tjbsuvqsznvsueph';   // app-specific password
+                $mail->SMTPSecure = 'tls';
+                $mail->Port = 587;
+        
+                $mail->setFrom"eventspace@gmail.com', 'EventSpace');
+                $mail->addAddress($email, $name); // to user
+                $mail->Subject = 'Your EventSpace Booking is Confirmed';
+                $mail->Body = "Hello $name,\n\nYour booking is confirmed:\nRoom: $room\nDate: $date\nTime: $start_time to $end_time.\n\nThank you for using EventSpace!";
+        
+                $mail->send();
+            } catch (Exception $e) {
+                //email error
+                $error .= " But confirmation email failed: {$mail->ErrorInfo}";
+            }
         } else {
             $error = "Error: " . $conn->error;
         }
