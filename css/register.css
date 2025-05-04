@@ -1,0 +1,152 @@
+body.register-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 80px;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .left-side {
+    flex: 1;
+  }
+  
+  .logo-register {
+    width: 110px;
+    margin-bottom: 40px;
+  }
+  
+  .left-side h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .subheadline {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 30px;
+  }
+  
+  .login-text {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  
+  .login-text a {
+    background: linear-gradient(90deg, #8A226F, #4A00E0);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .rooms {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .rooms {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .room-image {
+    width: 130px !important;
+    height: 130px !important;;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+    max-width: 100%;
+  }
+  
+  
+  .room-image:hover {
+    transform: scale(1.05);
+  }  
+  
+  /* RIGHT SIDE */
+  .right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-box {
+    background-color: white;
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-box h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  
+  .form-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fdefff;
+    font-size: 14px;
+  }
+  
+  /* Keep button styling consistent with your global .btn-gradient */
+  .form-box button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password a {
+    color: #6c63ff;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .btn-gradient {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .divider {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+
+  .error-message {
+    color: #E53935;
+    background-color: #ffeaea;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+  
