@@ -110,8 +110,8 @@ $conn->close();
   <div class="gallery-item">
     <img src="assets/images/room1.png" alt="The Atelier">
     <div class="caption">
-      <h4>The Atelier</h4>
-      <p>Perfect for culinary events and creative tastings.</p>
+      <h4>The Studio</h4>
+      <p>Perfect for meeting events and creative brainstormings.</p>
     </div>
   </div>
 
