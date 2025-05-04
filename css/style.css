@@ -125,13 +125,15 @@ body.register-page {
 /* Registration Form Box */
 .form-box {
   display: flex;
+  flex-direction: column; /* inputs stack vertically */
   background: white;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 420px;
-  justify-content: center;       /* Горизонтальное центрирование */
+  justify-content: center;
+  align-items: center; /* center the form elements */
 }
 
 .form-box h2 {
