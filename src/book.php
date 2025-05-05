@@ -1,9 +1,9 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
+require 'mailer/Exception.php';
+require 'mailer/PHPMailer.php';
+require 'mailer/SMTP.php';
 
 // connect to local DB
 $servername = "localhost";
