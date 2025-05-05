@@ -5,7 +5,7 @@ require 'src/Exception.php';
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 
-// connect to DB
+// connect to local DB
 $servername = "localhost";
 $username = "root"; 
 $password = ""; 
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
     $conflict_result = $conn->query($conflict_sql);
 
     if ($conflict_result->num_rows > 0) {
+        // if overlapping booking exists
         $error = "The selected time slot overlaps with an existing booking.";
     } else {
         $sql = "INSERT INTO bookings (name, email, date, room, start_time, end_time, status) 
@@ -44,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
         if ($conn->query($sql) === TRUE) {
             $success = "Booking confirmed!";
 
+            // send confirmation email
             $mail = new PHPMailer(true);
             try {
                 $mail->isSMTP();
@@ -88,12 +90,12 @@ $conn->close();
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/book.css">
   <style>
-    /* --- styles (same clean design, just adding small for highlighting) --- */
+
     .logout-btn {
       position: absolute;
       top: 20px;
       right: 30px;
-      background: #8E2DE2;
+      background: linear-gradient(to right, #8A226F, #7102b5);
       color: white;
       padding: 8px 16px;
       border-radius: 6px;
@@ -282,7 +284,10 @@ let selectedDate = null;
 let selectedRoom = null;
 let selectedStart = null;
 let selectedEnd = null;
+
+// booked time slots fetched from PHP
 const bookedSlots = <?php echo json_encode($bookings); ?>;
+
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
 
@@ -303,12 +308,14 @@ function renderCalendar() {
     calendarGrid.appendChild(dayHeader);
   });
 
+   // fill empty cells before the 1st of the month
   for (let i = 0; i < firstDay; i++) {
     const empty = document.createElement('div');
     empty.className = 'day-cell other-month';
     calendarGrid.appendChild(empty);
   }
 
+  // fill actual days of the month
   for (let i = 1; i <= daysInMonth; i++) {
     const dayCell = document.createElement('div');
     dayCell.className = 'day-cell';
@@ -334,17 +341,21 @@ function renderCalendar() {
   }
 }
 
+// handle clicking previous month
 document.getElementById('prevMonth').onclick = () => {
   currentMonth--;
   if (currentMonth < 0) { currentMonth = 11; currentYear--; }
   renderCalendar();
 };
+
+// handle clicking next month
 document.getElementById('nextMonth').onclick = () => {
   currentMonth++;
   if (currentMonth > 11) { currentMonth = 0; currentYear++; }
   renderCalendar();
 };
 
+// check if all booking inputs are selected to show form
 function checkBookingFormReady() {
   selectedRoom = document.getElementById('roomSelect').value;
   selectedStart = document.getElementById('startTime').value;

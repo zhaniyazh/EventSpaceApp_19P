@@ -26,7 +26,7 @@ git clone https://github.com/zhaniyazh/EventSpaceApp_19P.git
 # 2. Navigate into the project directory
 cd EventSpaceApp_19P
 
-# 3. Set up your local server (XAMPP/WAMP/MAMP)
+# 3. Set up your local server (I've used XAMPP)
 
 # 4. Import the database
 #    - Open phpMyAdmin
