@@ -64,9 +64,9 @@ This project does not include an automated test suite. However, the following ma
 
 
 ## **Known Issues / Limitations**  
-- Users can book, but they cannot manage their bookings after submission — only admin can  
-- Admin authentication is basic (no hashed passwords)
-- No mobile-optimized UI yet 
+- Users can book, but they cannot manage their bookings after submission — only admin can.
+- Admin authentication is basic (no hashed passwords) — even so, email-based verification codes are required. 
+- Password reset is currently not supported. 
 
 ## **References**  
 - [PHPMailer Documentation](https://github.com/PHPMailer/PHPMailer)  
