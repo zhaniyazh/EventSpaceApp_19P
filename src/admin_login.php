@@ -3,9 +3,9 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'src/mailer/Exception.php';
-require 'src/mailer/PHPMailer.php';
-require 'src/mailer/SMTP.php';
+require 'mailer/Exception.php';
+require 'mailer/PHPMailer.php';
+require 'mailer/SMTP.php';
 
 $error_message = ''; // a variable to hold any error messages
 
