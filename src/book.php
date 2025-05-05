@@ -165,9 +165,9 @@ $conn->close();
   </div>
 
   <div class="gallery-item">
-    <img src="assets/images/room4.jpg" alt="Spiral Studio">
+    <img src="assets/images/room4.jpg" alt="Fractal Studio">
     <div class="caption">
-      <h4>Spiral Studio</h4>
+      <h4>Fractal Studio</h4>
       <p>Modern design — great for creative sessions.</p>
     </div>
   </div>
@@ -211,7 +211,7 @@ $conn->close();
       <option value="The Studio">The Studio</option>
       <option value="Oak Room">Oak Room</option>
       <option value="Botanica Lounge">Botanica Lounge</option>
-      <option value="Spiral Studio">Spiral Studio</option>
+      <option value="Spiral Studio">Fractal Studio</option>
       <option value="The Gallery Room">The Gallery Room</option>
     </select>
   </div>
