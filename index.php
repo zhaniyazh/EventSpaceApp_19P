@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <title>EventSpace | Berlin, Germany</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap & Fonts -->
+  <!-- bootstrap & fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Header -->
+<!-- header -->
 <header class="container-fluid py-4 px-5 d-flex justify-content-between align-items-center">
   <img src="assets/icons/logo.png" alt="EventSpace Logo" style="height: 70px;">
   <div class="d-flex align-items-center gap-4">
@@ -23,7 +23,7 @@
   </div>
 </header>
 
-<!-- Hero Section -->
+<!-- hero section -->
 <section class="text-center mt-5 position-relative">
   <p class="text-uppercase text-muted fw-bold">Event Venue Booking in Berlin, Germany</p>
   <h1 class="fw-bold display-4">
@@ -31,13 +31,13 @@
   </h1>
   <p class="lead mx-auto mb-5" style="max-width: 700px;">A modern solution for booking private rooms and spaces for meetings, workshops, and group gatherings</p>
 
-  <!-- Decorative sparkles (updated position + size) -->
+  <!-- decorative sparkles -->
   <img src="assets/icons/sparkle.png" class="position-absolute" style="top: 300px; left: 500px; width: 70px;" alt="sparkle">
   <img src="assets/images/laptop.png" class="img-fluid mt-4" style="max-width: 600px;" alt="device mockup">
   <img src="assets/icons/sparkle.png" class="position-absolute" style="bottom: 60px; right: 500px; width: 70px;" alt="sparkle">
 </section>
 
-<!-- Venue Gallery -->
+<!-- venue gallery -->
 <header class="header">
   <div class="gallery">
     <img src="assets/images/room1.png" alt="Gallery 1">
@@ -48,7 +48,7 @@
   </div>
 </header>
 
-<!-- Footer Section -->
+<!-- footer section -->
 <footer class="container py-5 border-top d-flex flex-column flex-md-row justify-content-between">
   <div class="mb-4 mb-md-0 col-md-6">
     <h5 class="fw-bold">EVENTSPACE</h5>

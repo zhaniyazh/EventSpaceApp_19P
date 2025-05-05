@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'includes/db.php';
+require_once 'includes/db.php'; // DB connection file
 
-$error_message = ''; // Default empty
+$error_message = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { //only runs when the login form is submitted
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
@@ -16,20 +16,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $result = $stmt->get_result();
 
+         // if a user was found with that email
         if ($user = $result->fetch_assoc()) {
             if (password_verify($password, $user['password'])) {
-                // Success Login
+                // success login
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
 
-                header("Location: book.php"); // Redirect to next page
+                header("Location: book.php"); // redirect to next page
                 exit();
             } else {
-                // Password wrong
+                // password wrong
                 $error_message = 'Incorrect password. Please try again.';
             }
         } else {
-            // Email not found
+            // email not found
             $error_message = 'No account found with this email.';
         }
     }
@@ -49,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="register-page">
 
   <div class="container">
-    <!-- LEFT SIDE -->
+    <!-- left side of the page -->
     <div class="left-side">
       <a href="index.php">
         <img src="assets/icons/logo.png" alt="EventSpace Logo" class="logo-register">
@@ -68,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
 
-    <!-- RIGHT SIDE -->
+    <!-- right side -->
     <div class="right-side">
       <?php if (!empty($error_message)): ?>
         <div class="error-message"><?php echo $error_message; ?></div>

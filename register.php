@@ -1,10 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-?>
-
-<?php
-require_once 'includes/auth.php';
+require_once 'includes/auth.php'; // contains the registerUser() function logic
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -56,11 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <script>
-// Frontend password basic validation
+// password basic validation
 document.getElementById('registerForm').addEventListener('submit', function(event) {
   var password = document.querySelector('input[name="password"]').value;
   var confirm_password = document.querySelector('input[name="confirm_password"]').value;
 
+  // check password length
   if (password.length < 8) {
     event.preventDefault();
     Swal.fire({
@@ -72,6 +68,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     return false;
   }
 
+  // check if passwords match
   if (password !== confirm_password) {
     event.preventDefault();
     Swal.fire({
