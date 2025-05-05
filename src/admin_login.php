@@ -1,7 +1,7 @@
 <?php
 session_start();
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use mailer\PHPMailer;
+use mailer\Exception;
 
 require 'mailer/Exception.php';
 require 'mailer/PHPMailer.php';
