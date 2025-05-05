@@ -33,9 +33,9 @@ if (isset($_POST['edit'])) {
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
-require 'src/Exception.php';
+require 'mailer/PHPMailer.php';
+require 'mailer/SMTP.php';
+require 'mailer/Exception.php';
 
 if (isset($_GET['mail'])) {
     $id = (int)$_GET['mail'];
