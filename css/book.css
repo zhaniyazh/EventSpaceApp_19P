@@ -9,7 +9,7 @@ body.book-page {
     padding: 0;
   }
   
-  /* Header with logo and gallery */
+  /* header with logo and gallery */
   .header {
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@ body.book-page {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Venue info */
+  /* venue info */
   .venue-info {
     display: flex;
     justify-content: space-between;
@@ -58,7 +58,7 @@ body.book-page {
     color: #555;
   }
   
-  /* Divider */
+  /* divider */
   hr {
     border: none;
     height: 1px;
@@ -66,7 +66,7 @@ body.book-page {
     margin: 40px 0;
   }
   
-  /* Room details */
+  /* room details */
   .booking {
     padding: 40px;
   }
@@ -99,7 +99,7 @@ body.book-page {
     color: #8E2DE2;
   }
   
-  /* Calendar */
+  /* calendar */
   .calendar h4 {
     font-size: 20px;
     margin-bottom: 20px;
@@ -124,7 +124,7 @@ body.book-page {
     color: white;
   }
   
-  /* Time slots */
+  /* time slots */
   .times h5 {
     margin: 20px 0 10px;
     font-size: 18px;
@@ -150,7 +150,7 @@ body.book-page {
     color: white;
   }
   
-  /* Confirm button */
+  /* confirm button */
   .confirm {
     margin-top: 30px;
     text-align: center;

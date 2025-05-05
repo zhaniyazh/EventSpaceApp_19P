@@ -1,5 +1,5 @@
 <?php
-
+ // error popup with your custom message
 function showError($message) {
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
     echo "<script>
@@ -15,6 +15,7 @@ function showError($message) {
     exit();
 }
 
+// display a success message and redirect the user to the login page
 function showSuccess($message) {
     echo "
     <html>
@@ -86,7 +87,7 @@ function showSuccess($message) {
 }
 
 
-
+// send a welcome email using PHPMailer via SMTP (Gmail)
 function sendWelcomeEmail($email, $username) {
     require_once __DIR__ . '/../src/PHPMailer.php';
     require_once __DIR__ . '/../src/SMTP.php';
