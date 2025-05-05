@@ -1,5 +1,5 @@
 <?php
-// db.php – database connection (reuse this file wherever needed)
+//  database connection (reuse this file wherever needed)
 $servername = "localhost";
 $username = "root";
 $password = "";
