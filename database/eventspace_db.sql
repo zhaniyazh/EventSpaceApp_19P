@@ -19,6 +19,6 @@ CREATE TABLE IF NOT EXISTS bookings (
     date DATE NOT NULL,
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
-    status ENUM('confirmed', 'pending', 'cancelled') DEFAULT 'pending',
+    status ENUM('confirmed', 'pending', 'cancelled') DEFAULT 'confirmed',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
