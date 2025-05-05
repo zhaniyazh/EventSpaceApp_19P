@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/auth.php'; // contains the registerUser() function logic
+require_once 'auth.php'; // contains the registerUser() function logic
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
