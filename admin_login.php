@@ -7,8 +7,9 @@ require 'src/Exception.php';
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 
-$error_message = '';
+$error_message = ''; // a variable to hold any error messages
 
+// checking if form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -16,13 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email) || empty($password)) {
         $error_message = 'Please fill in both fields.';
     } elseif ($email === 'zhaniyazhaksylyk@gmail.com' && $password === 'EventSpace12345') {
-        // Generate 6-digit verification code
+
+        // generation of 6-digit verification code
         $code = rand(100000, 999999);
         $_SESSION['code'] = $code;
         $_SESSION['temp_user'] = [ 'email' => $email ];
         $_SESSION['show_verification'] = true;  
 
-        // Send email with code
+        // sending email with code
         $mail = new PHPMailer(true);
         try {
             $mail->isSMTP();
@@ -134,7 +136,6 @@ body {
       <img src="assets/icons/logo.png" alt="EventSpace Logo">
     </a>
 
-    <!-- Optional: dynamic error message -->
     <?php if (!empty($error_message)): ?>
       <div class="error-message"><?php echo $error_message; ?></div>
     <?php endif; ?>
@@ -150,6 +151,7 @@ body {
   <?php if (isset($_SESSION['show_verification']) && $_SESSION['show_verification']): ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
+    // input window for user to enter verification code
     Swal.fire({
       title: 'Verification Sent!',
       text: 'A code was sent to your email.',

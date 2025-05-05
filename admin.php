@@ -1,10 +1,11 @@
 <?php
+// connect to the database
 $conn = new mysqli("localhost", "root", "", "eventspace_db");
 if ($conn->connect_error) {
     die("DB connection error: " . $conn->connect_error);
 }
 
-// Delete
+// delete
 if (isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
     $conn->query("DELETE FROM bookings WHERE id=$id");
@@ -12,7 +13,7 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-// Edit
+// edit
 if (isset($_POST['edit'])) {
     $id = (int)$_POST['id'];
     $name = $conn->real_escape_string($_POST['name']);
@@ -28,7 +29,7 @@ if (isset($_POST['edit'])) {
     exit();
 }
 
-// Email
+// email
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -44,21 +45,19 @@ if (isset($_GET['mail'])) {
 
         $mail = new PHPMailer(true);
         try {
-            // Server settings
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'zhaniyazhaksylyk@gmail.com'; // Your Gmail
-            $mail->Password   = 'tjbsuvqsznvsueph';           // Your App Password
+            $mail->Username   = 'zhaniyazhaksylyk@gmail.com'; // my gmail (sender)
+            $mail->Password   = 'tjbsuvqsznvsueph';           // app password
             $mail->SMTPSecure = 'tls';
             $mail->Port       = 587;
 
-            // Recipients
+            // recipients
             $mail->setFrom('zhaniyazhaksylyk@gmail.com', 'EventSpace');
             $mail->addAddress($b['email'], $b['name']);
 
-            // Content
-            $mail->isHTML(false); // Set to true for HTML emails
+            $mail->isHTML(false); // set to true for HTML emails
             $mail->Subject = 'Booking Confirmation';
             $mail->Body    = "Hi " . $b['name'] . ",\n\nYour booking for " . $b['room'] . " on " . $b['date'] .
                              " from " . $b['start_time'] . " to " . $b['end_time'] . " is " . strtoupper($b['status']) . ".\n\nThank you!";
@@ -113,7 +112,7 @@ $result = $conn->query("SELECT * FROM bookings ORDER BY date, start_time");
     }
 
     .logout-btn:hover {
-      background: #6C1BB1;
+      background:linear-gradient(90deg, #8A226F, #4A00E0);
     }
 
     h2 {
