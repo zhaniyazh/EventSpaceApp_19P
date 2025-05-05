@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once 'includes/db.php';
-require_once 'includes/functions.php';
+require_once 'src/includes/db.php';
+require_once 'src/includes/functions.php';
 
 function registerUser($email, $username, $password, $confirm_password) {
     global $conn;
